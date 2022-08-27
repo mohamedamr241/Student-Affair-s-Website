@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Login page" />
+
+  <title>Login Page</title>
+{% load static %}
+  <link rel="stylesheet" href="{% static 'login.css'%}">
+  <link rel="icon" type="image/x-icon" href="{% static 'FCAI-CU.PNG' %}">
+  <script src="{% static 'login.js'%}"></script>
+</head>
+
+<body>
+  {% for message in messages %}
+  <div role="alert">
+      <strong>Message:</strong> {{ message }}
+      <button type="button" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+  </div>
+  {% endfor %}
+  <div class="logn">
+    {% load static %}
+    <img src="{% static 'login.PNG' %}" alt="Login Page"> <br> <br>
+    <h2>Student affairs</h2>
+    <div class="login">
+      <form id="frm" method="post" action="/login">
+        {% csrf_token %}
+        <label for="usr"></label><b>Username: </b>
+        <input type="text" id="usr" name="username" placeholder="Enter Username" required>
+        <br><br>
+        <label for="passwd"></label><b>Password: </b>
+        <input type="password" id="passwd" name="password" placeholder="Enter Password" required>
+        <br> <br>
+        <button type="submit">Log in</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

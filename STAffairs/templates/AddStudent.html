@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% extends 'nav.html'%}
+{%block content%}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Student</title>
+    <meta name="description" content="Add student page" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AddStudent.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'FCAI-CU.PNG' %}">
+    <script src="{% static 'AddStudent.js' %}" defer></script> 
+    <link rel="stylesheet" href="{% static 'nav.css' %}" />
+
+  </head>
+
+  <body>
+    <br />
+    <div>
+      <form>
+        <h2>Add Student</h2>
+        <div>
+          <div class="addstudentinfo">
+            <label for="Name">Sudent Name:</label>
+            <input
+              class="Name"
+              type="text"
+              id="Name"
+              placeholder="Student Name"
+              required
+            />
+          </div>
+          <div class="addstudentinfo">
+            <label for="ID">Student ID:</label>
+            <input type="number" id="ID" required />
+          </div>
+          <div class="addstudentinfo">
+            <label for="Gender">Gender:</label>
+            <br />
+            <label
+              ><input
+                type="radio"
+                name="gender"
+                value="male"
+                required
+              />Male</label
+            >
+            <label
+              ><input type="radio" name="gender" value="female" required/>Female</label
+            >
+          </div>
+          <div class="addstudentinfo">
+            <label for="BirthDate">Birth Date:</label>
+            <input type="date" value id="BirthDate" required />
+          </div>
+          <div class="addstudentinfo">
+            <label for="Level">Level:</label>
+            <select name="Level" id="lvl" required onchange="check()">
+              <option value="">-- select one --</option>
+              <option value="First Level">First Level</option>
+              <option value="Second Level">Second Level</option>
+              <option value="Third Level">Third Level</option>
+              <option value="Fourth Level">Fourth Level</option>
+              <option value="Masters Student">Masters Student</option>
+              <option value="PHD  Student">Phd Student</option>
+              <option value="Graduated">Graduated</option>
+            </select>
+          </div>
+          <div class="addstudentinfo">
+            <label for="GPA">GPA:</label>
+            <input type="float" id="GPA" value placeholder="0.00" required />
+          </div>
+          <div class="addstudentinfo">
+            <label for="Status">Status:</label>
+            <br />
+
+            <label
+              ><input
+                type="radio"
+                name="Status"
+                value="Active"
+                required
+              />Active</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="Status"
+                value="Inactive"
+              />Inactive</label
+            >
+          </div>
+
+          <div class="addstudentinfo">
+            <label for="Department">Department:</label>
+            <select name="Department" id="dep" required>
+              <option value="">-- General --</option>
+              <option value="IS">Information System</option>
+              <option value="DS">Decision Support</option>
+              <option value="CS">Computer Sience</option>
+              <option value="AI">Artificial Intelligence</option>
+              <option value="IT">Information Technology</option>
+            </select>
+          </div>
+
+          <div class="addstudentinfo">
+            <label for="PhoneNumber">Phone Number:</label>
+            <input
+              type="number"
+              id="PhoneNum"
+              placeholder="000-0000-0000"
+              required
+            />
+          </div>
+          <div class="addstudentinfo">
+            <label for="Email">Email:</label>
+            <input
+              type="text"
+              id="Email"
+              placeholder="-------------@example.com"
+              required
+            />
+          </div>
+
+          <button type="submit" name="Add" onclick="AddStudent()">Add</button>
+          <button type="Button" name="Cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock content%}

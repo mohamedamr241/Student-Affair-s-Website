@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% extends 'nav.html'%}
+{%block content%}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student's Affairs</title>
+    {%load static%}
+    <script src="{% static 'AllStudents.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'AllStudents.css'%}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'FCAI-CU.PNG' %}">
+  </head>
+  <body>
+    <div id="ALlStudent">
+      <h2>List of all students</h2>
+      <table id="container">
+        <tr>
+          <th>Student name</th>
+          <th>Student ID</th>
+          <th>Status</th>
+          <th>Level</th>
+          <th>Department</th>
+          <th>GPA</th>
+          <th>Birth Date</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td class="stu">Mohamed Amr Abd El Fattah</td>
+          <td class="stu">20200467</td>
+          <td class="stu">Active</td>
+          <td class="stu">Third level</td>
+          <td class="stu">CS</td>
+          <td class="stu">2.5</td>
+          <td class="stu">24/1/2002</td>
+          <td class="stu">01125</td>
+          <td class="stu">muhamedamr241@gmail.com</td>
+        </tr>
+        <tr>
+          <td class="stu">Fadia Khaled Abd El Hady</td>
+          <td class="stu">20200371</td>
+          <td class="stu">Inactive</td>
+          <td class="stu">Third level</td>
+          <td class="stu">CS</td>
+          <td class="stu">2.7</td>
+          <td class="stu">23/6/2002</td>
+          <td class="stu">86598</td>
+          <td class="stu">FadiaKhaled@gmail.com</td>
+        </tr>
+        <tr>
+          <td class="stu">Habiba Yasser Saied</td>
+          <td class="stu">20200147</td>
+          <td class="stu">Active</td>
+          <td class="stu">Second level</td>
+          <td class="stu">---</td>
+          <td class="stu">2.8</td>
+          <td class="stu">9/10/2002</td>
+          <td class="stu">85469</td>
+          <td class="stu">HabibaYasser@gmail.com</td>
+        </tr>
+        <tr>
+          <td class="stu">Habiba Mohamed Mohamed Hassan</td>
+          <td class="stu">20200145</td>
+          <td class="stu">Inactive</td>
+          <td class="stu">Third level</td>
+          <td class="stu">IS</td>
+          <td class="stu">3.0</td>
+          <td class="stu">7/5/2002</td>
+          <td class="stu">85638</td>
+          <td class="stu">HabibaMohamed@gmail.com</td>
+        </tr>
+        <tr>
+          <td class="stu">Mai Mostafa Amin</td>
+          <td class="stu">20200569</td>
+          <td class="stu">Active</td>
+          <td class="stu">Third level</td>
+          <td class="stu">IS</td>
+          <td class="stu">3.1</td>
+          <td class="stu">8/7/2002</td>
+          <td class="stu">0687</td>
+          <td class="stu">MaiMostafa@gmail.com</td>
+        </tr>
+        <tr>
+          <td class="stu">Zeyad Diaa Eldin Refeat</td>
+          <td class="stu">20200200</td>
+          <td class="stu">Inactive</td>
+          <td class="stu">Third level</td>
+          <td class="stu">IS</td>
+          <td class="stu">3.0</td>
+          <td class="stu">20/4/2002</td>
+          <td class="stu">01258</td>
+          <td class="stu">ZeyadDiaa@gmail.com</td>
+        </tr>
+      </table>
+      <br />
+      <br />
+
+      <h4>Edit student's Status</h4>
+      <label for="StudentStatus">Enter Student's ID: </label>
+      <input type="number" placeholder="Search by ID.." id="SearchID" /><br />
+      <label for="active">Active or inactive: </label><br /><br />
+      <input type="radio" id="active" name="studentStatus" value="Active" />
+      <label for="active">Active</label>
+      <input type="radio" id="inactive" name="studentStatus" value="Inactive" />
+      <label for="inactive">Inactive</label><br /><br />
+
+      <button type="button" id="button" onclick="success()">Save</button>
+    </div>
+  </body>
+</html>
+{% endblock content%}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% extends 'nav.html'%}
+{%block content%}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'active.css'%}" />>
+    <link rel="icon" type="image/x-icon" href="{% static 'FCAI-CU.PNG' %}">
+    <script src="{% static 'active.js'%}" defer></script>
+    <title>Active/Inactive Students</title>
+  </head>
+  <body>
+    <br>
+    <h2>Searching for active and inactive students</h2>
+    <div id="active_inactive">
+      <label for="FindStudent">Search: </label>
+      <form class="example" action="active">
+        <input
+          type="text"
+          placeholder="Enter student name "
+          name="search "
+          id="name"
+        />
+      </form>
+
+
+      <label for="Department">Department: </label>
+      <br />
+      <select name="Departments" id="Departments">
+        <option value="none" selected disabled hidden>- - -</option>
+        <option value="All">All</option>
+        <option value="CS">CS</option>
+        <option value="IT">IT</option>
+        <option value="DS">DS</option>
+        <option value="IS">IS</option>
+        <option value="AI">AI</option>
+        <option value="---">---</option>
+      </select>
+      <br />
+      <br />
+      <label for="level"> <b>Level:</b> </label> <br />
+      <ul style="list-style: none">
+        <li>
+          <input
+            type="checkbox"
+            id="First"
+            class="lvll"
+            name="First"
+            value="First level"
+          />
+          <label for="First"> First level </label><br />
+        </li>
+        <li>
+          <input
+            type="checkbox"
+            id="Second"
+            name="Second"
+            value="Second level"
+            class="lvll"
+          />
+          <label for="Second"> Second level </label><br />
+        </li>
+        <li>
+          <input
+            type="checkbox"
+            id="Third"
+            name="Third"
+            value="Third level"
+            class="lvll"
+          />
+          <label for="Third"> Third level </label><br />
+        </li>
+        <li>
+          <input
+            type="checkbox"
+            id="Fourth"
+            name="Fourth"
+            value="Fourth level"
+            class="lvll"
+          />
+          <label for="Fourth"> Fourth level </label><br />
+        </li>
+        <br />
+      </ul>
+      <label for="active">Active or inactive: </label><br /><br />
+      <input type="radio" id="active" name="studentStatus" value="Active" />
+      <label for="active">Active</label>
+      <input type="radio" id="inactive" name="studentStatus" value="Inactive" />
+      <label for="inactive">Inactive</label>
+      <input type="radio" id="All" name="studentStatus" value="All" />
+      <label for="All">All</label>
+      <br /><br />
+      <button type="button" id="button" onclick="loadDoc()" value="Search">
+        Search</button
+      ><br />
+      <label>Student Name:</label>
+      <p class="stdinfo" id="n"></p>
+      <label>Student ID:</label>
+      <p class="stdinfo" id="id"></p>
+      <label>Student Level:</label>
+      <p class="stdinfo" id="lvl"></p>
+      <label>Student Department:</label>
+      <p class="stdinfo" id="dep"></p>
+      <label>Student Status:</label>
+      <p class="stdinfo" id="stat"></p>
+      <label>GPA:</label>
+      <p class="stdinfo" id="gpa"></p>
+      <label>Birth Date:</label>
+      <p class="stdinfo" id="date"></p>
+      <label>Phone Number:</label>
+      <p class="stdinfo" id="num"></p>
+      <label>Email:</label>
+      <p class="stdinfo" id="email"></p>
+    </div>
+    <div id="searchForAllStudents">
+      <a href="AllStudents" target="_blank"
+        ><button type="button" id="button2">View all student</button>
+      </a>
+    </div>
+  </body>
+</html>
+{%endblock content%}
